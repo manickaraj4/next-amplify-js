@@ -1,12 +1,12 @@
 {
-  "projectName": "nextapp",
+  "projectName": "NextJSApp",
   "version": "3.1",
   "frontend": "javascript",
   "javascript": {
     "framework": "react",
     "config": {
-      "SourceDir": ".",
-      "DistributionDir": ".next",
+      "SourceDir": "src",
+      "DistributionDir": "out",
       "BuildCommand": "npm run-script build",
       "StartCommand": "npm run-script start"
     }
