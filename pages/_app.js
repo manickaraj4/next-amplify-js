@@ -1,6 +1,6 @@
 import '../styles/globals.css'
-import Amplify from 'aws-amplify';
-import config from '../aws-exports';
+import { Amplify } from 'aws-amplify';
+import config from '../src/aws-exports';
 Amplify.configure({
   ...config, ssr: true
 });
