@@ -76,11 +76,12 @@ export default function Home() {
         </Head>
   
         <main>
-          <h1 className={styles.title}>
+          <h3 className={styles.title}>
             {'Welcome everyone. To sign in please use the link below'}
-          </h1>
-
+          </h3>
+          <div className={styles.footer}>
         <Link href='/login'>Proceed to Login..</Link>
+        </div>
           </main>
           
       </div>
@@ -100,12 +101,11 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className={styles.title}>
+        <h3 className={styles.title}>
           {'Welcome to this wonderful app '+ currentUser}
-        </h1>
-          <Link href='/signout'>Sign Out</Link>
-          <AddNote></AddNote>
-
+        </h3>
+        <div className={styles.footer}><Link href='/signout'>Sign Out</Link></div>
+        <Cart></Cart>
       </main>
         
     </div>
@@ -131,7 +131,7 @@ export default function Home() {
 
 } */
 
-function AddNote(){
+function AddNote({refresh}){
 
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
@@ -153,13 +153,14 @@ function AddNote(){
     console.log(body);
     if (res.status === 200){
        setResult('note created sucessfully');
+       refresh();
     }else{
       setResult('Some issue with creation of note');
     }
   }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.code}>
       <TextField label="Name:" placeholder='provide a name for the note' onChange={nameChange}></TextField>
       <TextField label="Description:" placeholder='provide a description for the note'  onChange={descChange}></TextField>
       <Button onClick={createNote}>Add Note</Button>
@@ -167,3 +168,76 @@ function AddNote(){
     </div>
   )
 }
+
+
+const Cart = () => {
+
+  const [notes,setNotes] = useState([]);
+  const [errorMessage,setErrorMessage] = useState('');
+
+  async function listNotes(){
+
+    const res = await fetch('api/listnotes');
+    
+    const body = await res.json();
+    console.log(body);
+    if (res.status === 200){
+      setNotes(body.result.items);
+    }else{
+      setErrorMessage('Some issue with listing notes');
+    }
+  }
+
+  useEffect(()=>{
+    listNotes();
+
+  },[]);
+
+
+
+  return (
+      <div className={styles.grid}>
+      <div className={styles.separate}> 
+      
+      <AddNote refresh={listNotes}></AddNote>
+      </div>
+      {
+          notes.map((note)=>(
+              <Note owner={note.owner} id={note.id} name={note.name} content={note.description} refresh={listNotes} key={note.id}></Note>
+          ))
+      }
+      </div>
+  )
+}
+
+
+const Note = ({owner,id,name,content,refresh}) => {
+  const [errormsg,setErrorMessage] = useState('');
+
+  async function deleteNote(id){
+
+    const res = await fetch('api/deletenote/'+id);
+    
+    const body = await res.json();
+    console.log(body);
+    if (res.status === 200){
+      setErrorMessage('note delete sucessfully');
+      refresh();
+    }else{
+      setErrorMessage('Some issue with deletion of this note');
+    }
+  }
+  
+  return (
+      <div className={styles.card}>  
+          <h6>{id}</h6>
+          <h3>{name}</h3>
+          <h4 className={styles.code}>{content}</h4>
+          <h5>Owned by: {owner}</h5>
+          <Button onClick={()=>deleteNote(id)}>Delete this note</Button>
+          <br></br>
+          <label>{errormsg}</label>
+      </div>
+  )
+}
+
