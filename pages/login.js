@@ -1,5 +1,6 @@
 import { Auth } from 'aws-amplify';
 import { useState } from "react";
+import styles from '../styles/Home.module.css'
 
 export default function Login(){
 

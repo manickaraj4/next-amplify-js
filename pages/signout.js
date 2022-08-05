@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Auth } from "aws-amplify";
-
+import styles from '../styles/Home.module.css'
 
 
 export default function Signout(){
