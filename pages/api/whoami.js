@@ -1,5 +1,8 @@
 import NextCors from 'nextjs-cors';
-import { Auth, withSSRContext } from "aws-amplify";
+import { Amplify, withSSRContext } from "aws-amplify";
+import config from "../../src/aws-exports.js"
+
+Amplify.configure({ ...config, ssr: true })
 
 export default async function handler(req, res) {
 
