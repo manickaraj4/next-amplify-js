@@ -30,7 +30,7 @@ export default function Login(){
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             <label>Username</label>
             <input label='Username' type='text' onChange={onChangeUsername} value={username}/>
             <br></br>
