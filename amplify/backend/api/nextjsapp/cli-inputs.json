@@ -3,19 +3,13 @@
   "serviceConfiguration": {
     "apiName": "nextjsapp",
     "serviceName": "AppSync",
-    "gqlSchemaPath": "/Users/manickgm/AmplifyProjects/next-app/amplify/backend/api/nextjsapp/schema.graphql",
     "defaultAuthType": {
-      "mode": "AMAZON_COGNITO_USER_POOLS",
-      "cognitoUserPoolId": "authnextjsapp161a30ef"
+      "mode": "API_KEY",
+      "expirationTime": 7,
+      "apiKeyExpirationDate": "2022-12-23T07:53:28.296Z",
+      "keyDescription": ""
     },
-    "additionalAuthTypes": [
-      {
-        "mode": "API_KEY",
-        "expirationTime": 250,
-        "apiKeyExpirationDate": "2023-04-11T14:20:29.055Z",
-        "keyDescription": ""
-      }
-    ],
+    "additionalAuthTypes": [],
     "conflictResolution": {}
   }
 }

@@ -36,12 +36,7 @@
     },
     "categories": {
       "auth": {
-        "nextjsapp161a30ef": {
-          "userPoolId": "us-east-1_IZ1XDuMur",
-          "userPoolName": "amplify_backend_manager_d27gemhx438bg1",
-          "webClientId": "2coqdsivpn87k808ct1lkeon0j",
-          "nativeClientId": "2coqdsivpn87k808ct1lkeon0j"
-        }
+        "nextjsappebd19a23": {}
       }
     }
   }
