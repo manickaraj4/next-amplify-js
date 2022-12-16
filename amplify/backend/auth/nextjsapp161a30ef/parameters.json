@@ -12,8 +12,5 @@
     "Requires Symbols"
   ],
   "mfaConfiguration": "OFF",
-  "autoVerifiedAttributes": [
-    "email"
-  ],
   "mfaTypes": []
 }

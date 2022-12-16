@@ -21,5 +21,28 @@
         }
       }
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-nextjsapp-prod-74941-authRole",
+      "UnauthRoleArn": "arn:aws:iam::357880228549:role/amplify-nextjsapp-prod-74941-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::357880228549:role/amplify-nextjsapp-prod-74941-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-nextjsapp-prod-74941-deployment",
+      "UnauthRoleName": "amplify-nextjsapp-prod-74941-unauthRole",
+      "StackName": "amplify-nextjsapp-prod-74941",
+      "StackId": "arn:aws:cloudformation:us-east-1:357880228549:stack/amplify-nextjsapp-prod-74941/36b0c3a0-7d16-11ed-93e4-0a512eae3dfd",
+      "AmplifyAppId": "d7q0iv701t4vv"
+    },
+    "categories": {
+      "auth": {
+        "nextjsapp161a30ef": {
+          "userPoolId": "us-east-1_IZ1XDuMur",
+          "userPoolName": "amplify_backend_manager_d27gemhx438bg1",
+          "webClientId": "2coqdsivpn87k808ct1lkeon0j",
+          "nativeClientId": "2coqdsivpn87k808ct1lkeon0j"
+        }
+      }
+    }
   }
 }
