@@ -4,12 +4,17 @@
     "apiName": "nextjsapp",
     "serviceName": "AppSync",
     "defaultAuthType": {
-      "mode": "API_KEY",
-      "expirationTime": 7,
-      "apiKeyExpirationDate": "2022-12-23T07:53:28.296Z",
-      "keyDescription": ""
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authnextjsappebd19a23"
     },
-    "additionalAuthTypes": [],
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 7,
+        "apiKeyExpirationDate": "2022-12-23T08:15:05.042Z",
+        "keyDescription": ""
+      }
+    ],
     "conflictResolution": {}
   }
 }

@@ -2,5 +2,11 @@
   "AppSyncApiName": "nextjsapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
   "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2022-12-16T07:53:31.033Z"
+  "AuthModeLastUpdated": "2022-12-16T08:03:35.910Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authnextjsappebd19a23",
+      "Outputs.UserPoolId"
+    ]
+  }
 }
